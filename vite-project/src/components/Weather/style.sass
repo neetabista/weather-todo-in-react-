@@ -1,0 +1,108 @@
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  outline: none
+  border: none
+  list-style: none
+  text-decoration: none
+  font-family: 'Poppins', sans-serif
+
+@mixin flex($justify)
+  display: flex
+  justify-content: $justify
+  align-items: center
+
+@mixin background-img()
+  background-position: center
+  background-size: cover
+  background-repeat: no-repeat
+
+@mixin grid($columns)
+  display: grid
+  grid-template-columns: $columns
+  grid-gap: 30px
+
+section
+  padding: 3rem 0
+
+.wrapper
+  max-width: 1300px
+  margin: 0 auto
+.container
+  @include flex($justify: center)
+  flex-direction: column
+  h1
+    padding: 3rem 0
+  .search
+    border-radius: 20px
+
+    input
+      min-width: 300px
+      padding: .7rem .8rem
+      border-radius: 5px 0 0 5px
+      background-color: #e7e7e7
+    button
+      background-color: #08d3f7
+      padding: .7rem .8rem
+      font-weight: bold
+      cursor: pointer
+      border-radius: 0 5px 5px 0
+.weather-box-section
+  @include flex($justify: center)
+  flex-direction: column
+  margin-bottom: 10rem
+  .weather-box
+    min-width: 500px
+    box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.3),0 17px 17px 0 rgba(0, 0, 0, 0.15)
+    .box
+      // width: 500px
+      width: 100%
+      height: 150px
+      padding: 2rem 1rem
+      background-color: #ffffff
+      @include flex($justify: center)
+      .icon
+        .wi
+          font-size: 50px
+    .weather-info
+      @include grid($columns: 1fr 150px)
+      grid-gap: 0
+      .temoerature-section
+        background-color: #2976A6
+        color: #ffffff
+        padding: 2rem 1rem
+        @include flex($justify: center)
+        gap: 2rem
+        .temperature
+          font-size: 40px
+          font-weight: bold
+        .description
+          .weathercondition
+            font-size: 32px
+          .place
+            font-size: 14px
+
+      .date
+        background-color: #04D9D9
+        color: #ffffff
+        font-weight: 500px
+        padding: 2rem 1rem
+        font-size: 20px
+        @include flex($justify: center )
+  .extra-temp
+    background-color: #ffffff
+    padding: 2rem .8rem
+    .temp-info-minmax
+      @include grid($columns:1fr 1fr 1fr 1fr )
+      .two-sides-section
+        @include flex($justify: center)
+        gap: 1rem
+        p
+
+          & .wi
+            color: #04D9D9
+            font-size: 24px
+        .extra-info-leftside
+          font-size: 13px
+          text-transform: capitalize

@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,900&display=swap')
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  outline: none
+  border: none
+  list-style: none
+  text-decoration: none
+  font-family: 'Poppins', sans-serif
+
+@mixin flex($justify)
+  display: flex
+  justify-content: $justify
+  align-items: center
+
+@mixin background-img()
+  background-position: center
+  background-size: cover
+  background-repeat: no-repeat
+
+@mixin grid($columns)
+  display: grid
+  grid-template-columns: $columns
+  grid-gap: 30px
+
+section
+  padding: 3rem 0
+
+.wrapper
+  max-width: 1300px
+  margin: 0 auto
+  padding: 0 1.875rem
+.todo-section
+  @include flex($justify: center)
+  flex-direction: column
+  .add-item
+    @include flex($justify:space-between )
+    margin-top: 1rem
+
+    input
+      box-shadow: 0 0 5px rgba(75, 75, 75, 0.07)
+      padding: .8rem .5rem
+      border: 1px solid #380328
+      min-width: 20rem
+      height: 3rem
+
+    .btn
+      margin-left: -2rem
+      cursor: pointer
+
+  .showItem
+    .eachItem
+      padding: .8rem .5rem
+      min-width: 20rem
+      height: 3rem
+      margin-top: 1rem
+      background-color: #380328
+      color: #ffffff
+      @include flex($justify:space-between )
+      p
+        text-transform: capitalize
+        font-size: 20px
+      .btn
+        cursor: pointer
+  .remove-btn
+    padding: .7rem .8rem
+    color: #ffffffff
+    background-color: #380328
+    margin-top: 3rem
+    cursor: pointer
