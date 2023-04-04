@@ -124,7 +124,7 @@ const Todo = () => {
               })}
             </div>
             <div className="remove-btn" onClick={removeAll}>
-              Remove All
+              Remove All All
             </div>
           </div>
         </div>
